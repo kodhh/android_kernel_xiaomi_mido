@@ -14,7 +14,11 @@ endif
 ifneq ($(CONFIG_MSMB_CAMERA_LEGACY),y)
 obj-$(CONFIG_MSMB_CAMERA) += camera_v2/
 else
+ifeq ($(CONFIG_MACH_XIAOMI_MARKW),y)
+obj-$(CONFIG_MSMB_CAMERA) += camera_v2_markw/
+else
 obj-$(CONFIG_MSMB_CAMERA) += camera_v2-legacy/
+endif
 endif
 obj-y += broadcast/
 obj-$(CONFIG_DVB_MPQ) += dvb/

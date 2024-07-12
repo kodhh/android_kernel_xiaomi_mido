@@ -58,6 +58,9 @@ if !MSMB_CAMERA_LEGACY
 source "drivers/media/platform/msm/camera_v2/Kconfig"
 endif # !MSMB_CAMERA_LEGACY
 if MSMB_CAMERA_LEGACY
+if MACH_XIAOMI_MARKW
+source "drivers/media/platform/msm/camera_v2_markw/Kconfig"
+endif # MACH_XIAOMI_MARKW
 source "drivers/media/platform/msm/camera_v2-legacy/Kconfig"
 endif # MSMB_CAMERA_LEGACY
 endif # MSMB_CAMERA
